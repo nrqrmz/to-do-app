@@ -6,5 +6,10 @@ const app = Vue.createApp({
         { title: 'Deploy my app in github pages', done: false }
       ]
     }
+  },
+  methods: {
+    addTodo() {
+      alert('hello method')
+    }
   }
 })
