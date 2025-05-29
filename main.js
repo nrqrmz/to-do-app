@@ -1,7 +1,10 @@
 const app = Vue.createApp({
   data() {
     return {
-      message: 'Hello world'
+      todos: [
+        { title: 'Create a vue app', done: true },
+        { title: 'Deploy my app in github pages', done: false }
+      ]
     }
   }
 })
