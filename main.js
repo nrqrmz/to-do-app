@@ -1,10 +1,7 @@
 const app = Vue.createApp({
   data() {
     return {
-      todos: [
-        { title: 'Create a vue app', done: true },
-        { title: 'Deploy my app in github pages', done: false }
-      ],
+      todos: [],
       newTodo: ''
     }
   },
@@ -15,9 +12,29 @@ const app = Vue.createApp({
         this.todos.push(todo)
         this.newTodo = ''
       }
+      this.saveTodos()
     },
     deleteTodo(index) {
       this.todos.splice(index, 1)
+      this.saveTodos()
+    },
+    updateStatus() {
+      this.saveTodos()
+    },
+    saveTodos() {
+      localStorage.setItem('todos', JSON.stringify(this.todos));
+    },
+    loadTodos() {
+      const saved = localStorage.getItem('todos');
+      if (saved) {
+        this.todos = JSON.parse(saved);
+      }
     }
+  },
+  mounted() {
+    this.loadTodos();
   }
 })
+
+// const vm = app.mount('#app')
+// window.vm = vm
