@@ -9,24 +9,24 @@
     <link rel="stylesheet" href="assets/styles.css">
   </head>
   <body class="bg-light">
-    <div id="app">
+    <div id="app" v-cloak>
       <div class="d-flex justify-content-center mt-4">
         <div class="bg-white p-4 shadow-lg col-11 col-md-6 col-lg-4 rounded-3">
           <h1>TO-DO APP</h1>
           <ul class="list-unstyled">
-            <li v-for="todo in todos">
+            <li v-for="(todo, index) in todos">
               <div class="d-flex justify-content-between">
                 <div class="d-flex">
                   <input type="checkbox" v-model="todo.done" class="me-2">
                   <div>{{todo.title}}</div>
                 </div>
-                <button type="button" class="btn-close fs-6" aria-label="Close"></button>
+                <button @click="deleteTodo(index)" type="button" class="btn-close fs-6" aria-label="Close"></button>
               </div>
             </li>
           </ul>
           <br>
           <div class="d-flex">
-            <input type="text" placeholder="Add a new to-do" class="form-control">
+            <input v-model="newTodo" type="text" placeholder="Add a new to-do" class="form-control">
             <input type="submit" value="Add" class="btn btn-primary" v-on:click="addTodo">
           </div>
         </div>
