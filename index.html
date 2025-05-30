@@ -12,7 +12,7 @@
     <div id="app" v-cloak>
       <div class="d-flex justify-content-center mt-4">
         <div class="bg-white p-4 shadow-lg col-11 col-md-6 col-lg-4 rounded-3">
-          <h1>TO-DO APP</h1>
+          <h1>TO-DO APP</h1><br>
           <ul class="list-unstyled">
             <li v-for="(todo, index) in todos">
               <div class="d-flex justify-content-between">
@@ -26,8 +26,8 @@
           </ul>
           <br>
           <div class="d-flex">
-            <input v-model="newTodo" type="text" placeholder="Add a new to-do" class="form-control">
-            <input type="submit" value="Add" class="btn btn-primary" v-on:click="addTodo">
+            <input v-model="newTodo" type="text" placeholder="Add a new to-do" class="bw-input">
+            <input type="submit" value="Add" class="bw-btn" v-on:click="addTodo">
           </div>
         </div>
       </div>
