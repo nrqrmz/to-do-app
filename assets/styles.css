@@ -2,3 +2,17 @@
   display: none;
 }
 
+.bw-input {
+  border: none;
+  outline: none;
+  flex: 1;
+}
+
+.bw-btn {
+  all: unset;
+  font-weight: bold;
+}
+
+input[type="checkbox"] {
+  accent-color: black;
+}
