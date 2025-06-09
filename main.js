@@ -15,8 +15,12 @@ const app = Vue.createApp({
       this.saveTodos()
     },
     deleteTodo(index) {
-      this.todos.splice(index, 1)
-      this.saveTodos()
+      const todo = this.todos[index]
+      const confirmed = confirm(`Are you sure you want to delete "${todo.title}"?`)
+      if (confirmed) {
+        this.todos.splice(index, 1)
+        this.saveTodos()
+      }
     },
     updateStatus() {
       this.saveTodos()
